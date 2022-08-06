@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegEX</title>
+    <style>
+        body {
+          background: #2A0944;
+        }
+        
+        .content {
+          max-width: 500px;
+          margin: auto;
+          background: white;
+          padding: 10px;
+          margin-top:130px ;
+        }
+        h1 {text-align: center;}
+        p {text-align: center;}
+        div {text-align: center;}
+        </style>
+</head>
+<body>
+    <div class = 'content'>
+        <h1 style="color:red;">Welcome to Regex</h1>
+
+        <form action = "" method="post">
+            <label style="font-size:35px;">String</label><br>
+            <textarea rows="2" cols="25" name="txt" placeholder="Enter String"></textarea><br><br>
+
+            <label style="font-size:35px;">Regex</label><br>
+            <textarea rows="2" cols="25" name="req_exp" placeholder="Enter RegEX"></textarea><br><br>
+
+            <input style="font-size:20px;" onMouseOver="this.style.color='red'"
+            onMouseOut="this.style.color='green'" type="submit" value="SUBMIT"><br><br>
+        </form>
+        
+    Count :- {{ count }}<br>
+    
+    <!--Jinja Templating -->
+    <!-- we use jinja templating to extract the two variable value which we get frm backend and show on client side-->
+    {% for i in range(m_s|length) %}
+        {{ i+1 }} Occurence :- Starting index : {{ m_s[i] }},
+            Ending Index : {{ m_e[i] }} <br>
+        {% endfor %}
+    </div>
+</body>
+</html>
